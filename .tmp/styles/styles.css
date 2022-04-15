@@ -1,0 +1,153 @@
+/* line 1, ../../app/styles/styles.scss */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* line 7, ../../app/styles/styles.scss */
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+/* line 68, ../../app/styles/styles.scss */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+  border: none;
+}
+
+/* line 76, ../../app/styles/styles.scss */
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+/* line 84, ../../app/styles/styles.scss */
+body {
+  line-height: 1;
+}
+
+/* line 88, ../../app/styles/styles.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 93, ../../app/styles/styles.scss */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* line 98, ../../app/styles/styles.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* line 106, ../../app/styles/styles.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 111, ../../app/styles/styles.scss */
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+/* line 120, ../../app/styles/styles.scss */
+button {
+  border: 0;
+  padding: 0;
+  outline: none;
+  background-color: white;
+}
+/* line 126, ../../app/styles/styles.scss */
+button:hover {
+  cursor: pointer;
+}
+
+/* line 131, ../../app/styles/styles.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+/* line 135, ../../app/styles/styles.scss */
+a:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
