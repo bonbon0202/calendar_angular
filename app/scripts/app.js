@@ -9,7 +9,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularMoment',
+    'calendarLayout'
   ])
   .config(function ($routeProvider) {
     $routeProvider

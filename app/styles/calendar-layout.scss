@@ -1,0 +1,78 @@
+@import "./variables";
+
+.container {
+  min-width: 800px;
+  max-width: 1200px;
+  margin: 150px auto;
+
+  .monthly-tool {
+    @include flexCenter;
+    margin-bottom: 5px;
+  
+    .arrow-icon {
+      width: 22px;
+      cursor: pointer;
+    }
+  
+    .current-month {
+      width: 100px;
+      margin: 0 10px;
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      color: $theme-orange;
+    }
+  }
+
+  .dayname-wrapper {
+    display: flex;
+
+    .day-name {
+      flex: 1;
+      padding: 5px;
+      text-align: center;
+      background-color: $theme-gray;
+      color: $theme-white;
+    }
+  }
+}
+
+.week-wrapper {
+  display: flex;
+
+  .day-wrapper {
+    flex: 1;
+  
+    .date {
+      padding: 5px 0;
+      border-bottom: $line;
+      border-left: $line;
+      color: $theme-date-number-gray;
+      background-color: $theme-light-gray;
+      text-align: center;
+    }
+  
+    &:last-child {
+      .date,
+      .content {
+        border-right: $line;
+      }
+    }
+  
+    .content {
+      height: 100%;
+      min-height: 75px;
+      border-bottom: $line;
+      border-left: $line;
+  
+      &.dateInOtherMonth {
+        background-color: $theme-light-gray;
+      }
+  
+      &.todayContent {
+        background-color: rgb(247, 228, 193);
+      }
+    }
+  }
+  
+}

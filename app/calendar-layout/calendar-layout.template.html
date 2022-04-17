@@ -1,0 +1,23 @@
+<section class="container" ng-controller="MonthlyController">
+  <div class="monthly-tool">
+    <img class="arrow-icon" src="images/arrow-back.png"  ng-click="updateMonth('previous')" />
+    <span class="current-month">{{ month.format("YYYY.MM") }}</span>
+    <img class="arrow-icon" src="images/arrow-forward.png"  ng-click="updateMonth('next')" />
+  </div>
+  <div class="dayname-wrapper">
+    <div class="day-name" ng-repeat="dayName in dayNames">
+      {{ dayName }}
+    </div>
+  </div >
+  <div class="week-wrapper" ng-repeat="week in weeks">
+    <div 
+      class="day-wrapper" 
+      ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" 
+      ng-repeat="day in week.days"
+    >
+      <div class="date">{{ day.number }}</div>
+      <div class="content"></div>
+    </div>
+  </div>
+</section>
+<h1>calendar</h1>

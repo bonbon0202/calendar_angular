@@ -1,0 +1,79 @@
+/* line 3, ../../app/styles/calendar-layout.scss */
+.container {
+  min-width: 800px;
+  max-width: 1200px;
+  margin: 150px auto;
+}
+/* line 8, ../../app/styles/calendar-layout.scss */
+.container .monthly-tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* line 12, ../../app/styles/calendar-layout.scss */
+.container .monthly-tool .arrow-icon {
+  width: 22px;
+  cursor: pointer;
+}
+/* line 17, ../../app/styles/calendar-layout.scss */
+.container .monthly-tool .current-month {
+  width: 100px;
+  margin: 0 10px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #ff6813;
+}
+/* line 27, ../../app/styles/calendar-layout.scss */
+.container .dayname-wrapper {
+  display: flex;
+}
+/* line 30, ../../app/styles/calendar-layout.scss */
+.container .dayname-wrapper .day-name {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  background-color: #bbbbbb;
+  color: #fff;
+}
+
+/* line 40, ../../app/styles/calendar-layout.scss */
+.week-wrapper {
+  display: flex;
+}
+/* line 43, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper {
+  flex: 1;
+}
+/* line 46, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .date {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  color: #777;
+  background-color: #fafafa;
+  text-align: center;
+}
+/* line 56, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper:last-child .date,
+.week-wrapper .day-wrapper:last-child .content {
+  border-right: 1px solid #f0f0f0;
+}
+/* line 62, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content {
+  height: 100%;
+  min-height: 75px;
+  border-bottom: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+}
+/* line 68, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content.dateInOtherMonth {
+  background-color: #fafafa;
+}
+/* line 72, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content.todayContent {
+  background-color: #f7e4c1;
+}
+
+/*# sourceMappingURL=calendar-layout.css.map */
