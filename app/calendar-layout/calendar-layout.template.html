@@ -12,7 +12,6 @@
   <div class="week-wrapper" ng-repeat="week in weeks">
     <div 
       class="day-wrapper" 
-      ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" 
       ng-repeat="day in week.days"
     >
       <div class="date">{{ day.number }}</div>
@@ -20,4 +19,3 @@
     </div>
   </div>
 </section>
-<h1>calendar</h1>
