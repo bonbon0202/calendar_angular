@@ -75,5 +75,33 @@
 .week-wrapper .day-wrapper .content.todayContent {
   background-color: #f7e4c1;
 }
+/* line 76, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content .posting-item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+/* line 83, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content .posting-item:hover {
+  background-color: #e4e4e4;
+}
+/* line 87, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content .posting-item .badge {
+  padding: 2px;
+  margin-right: 4px;
+  border-radius: 3px;
+  font-size: 8px;
+  color: #fff;
+}
+/* line 94, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content .posting-item .badge.start {
+  background-color: #ff6813;
+}
+/* line 98, ../../app/styles/calendar-layout.scss */
+.week-wrapper .day-wrapper .content .posting-item .badge.end {
+  background-color: #3e4c5d;
+}
 
 /*# sourceMappingURL=calendar-layout.css.map */

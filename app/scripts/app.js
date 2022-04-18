@@ -11,7 +11,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'angularMoment',
-    'calendarLayout'
+    'calendarLayout',
   ])
   .config(function ($routeProvider) {
     $routeProvider

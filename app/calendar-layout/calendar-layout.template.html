@@ -15,7 +15,17 @@
       ng-repeat="day in week.days"
     >
       <div class="date">{{ day.number }}</div>
-      <div class="content"></div>
+      <div class="content">
+        <div
+          class="posting-item"
+          ng-repeat="posting in day.postings"
+        >
+          <span class="badge {{ posting.badge }}">
+            {{ badgeEngToKor[posting.badge] }}
+          </span>
+          <span class="company-name">{{ posting.name }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

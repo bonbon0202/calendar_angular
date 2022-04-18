@@ -72,6 +72,34 @@
       &.todayContent {
         background-color: rgb(247, 228, 193);
       }
+
+      .posting-item {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        font-size: 12px;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: $theme-hover-gray;
+        }
+      
+        .badge {
+          padding: 2px;
+          margin-right: 4px;
+          border-radius: 3px;
+          font-size: 8px;
+          color: $theme-white;
+      
+          &.start {
+            background-color: $theme-orange;
+          }
+      
+          &.end {
+            background-color: $theme-navy;
+          }
+        }
+      }
     }
   }
   
