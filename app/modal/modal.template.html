@@ -1,0 +1,25 @@
+<div 
+  class="dimmed-background" 
+  ng-show="isOpenedModal"
+  ng-controller="ModalController"
+  ng-click="closeModal()"
+>
+  <section class="container" ng-click="$event.stopPropagation()">
+    <header class="recruitment-info">
+      <img ng-src="{{ posting.image }}" alt="company logo" />
+      <div>
+        <p class="company-name">{{ posting.name }}</p>
+        <span class="period">{{ getPeriod(posting.start_time, posting.end_time)}}</span>
+        <span class="diff-date">{{ getDiffTime() }}</span>
+      </div>
+      <img 
+        class="close-icon" 
+        src="images/close.png" 
+        alt="close" 
+        ng-click="closeModal()"
+      />
+    </header>
+    <div class="content-wrapper" ng-bind-html="posting.content">
+    </div>
+  </section>
+</div>

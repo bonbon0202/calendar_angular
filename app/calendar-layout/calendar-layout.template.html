@@ -1,4 +1,4 @@
-<section class="container" ng-controller="MonthlyController">
+<section class="container" ng-Controller="CalendarController">
   <div class="monthly-tool">
     <img class="arrow-icon" src="images/arrow-back.png"  ng-click="updateMonth('previous')" />
     <span class="current-month">{{ month.format("YYYY.MM") }}</span>
@@ -19,6 +19,7 @@
         <div
           class="posting-item"
           ng-repeat="posting in day.postings"
+          ng-click="openPostingModal(posting)"
         >
           <span class="badge {{ posting.badge }}">
             {{ badgeEngToKor[posting.badge] }}

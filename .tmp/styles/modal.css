@@ -1,0 +1,70 @@
+/* line 3, ../../app/styles/modal.scss */
+.dimmed-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  overflow: scroll;
+}
+/* line 13, ../../app/styles/modal.scss */
+.dimmed-background .container {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  cursor: default;
+}
+/* line 22, ../../app/styles/modal.scss */
+.dimmed-background .container img:not(.close-icon) {
+  float: none !important;
+  position: relative !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+/* line 29, ../../app/styles/modal.scss */
+.dimmed-background .container .recruitment-info {
+  display: flex;
+  position: relative;
+  padding: 20px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* line 35, ../../app/styles/modal.scss */
+.dimmed-background .container .recruitment-info img:not(.close-icon) {
+  max-width: 90px !important;
+  max-height: 140px;
+  margin-right: 20px;
+}
+/* line 41, ../../app/styles/modal.scss */
+.dimmed-background .container .recruitment-info .company-name {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 47, ../../app/styles/modal.scss */
+.dimmed-background .container .recruitment-info .diff-date {
+  margin-left: 10px;
+  color: #ff6813;
+  font-weight: bold;
+}
+/* line 53, ../../app/styles/modal.scss */
+.dimmed-background .container .recruitment-info img.close-icon {
+  position: absolute;
+  right: 15px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+/* line 62, ../../app/styles/modal.scss */
+.dimmed-background .container .content-wrapper {
+  padding: 20px 15px;
+}
+/* line 65, ../../app/styles/modal.scss */
+.dimmed-background .container .content-wrapper p, .dimmed-background .container .content-wrapper div {
+  text-align: center;
+}
+/*# sourceMappingURL=modal.css.map */

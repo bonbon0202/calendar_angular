@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('calendar2App', [
+  .module('calendarApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -12,11 +12,12 @@ angular
     'ngTouch',
     'angularMoment',
     'calendarLayout',
+    'modal'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'main/main.html',
       })
       .otherwise({
         redirectTo: '/'

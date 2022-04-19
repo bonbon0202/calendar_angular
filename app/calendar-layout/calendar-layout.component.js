@@ -4,12 +4,9 @@ angular
   .module('calendarLayout')
   .component('calendarLayout', {
     templateUrl: 'calendar-layout/calendar-layout.template.html',
-  });
-
-angular
-  .module('calendarLayout')
-  .controller('MonthlyController', ['$scope', 'moment', '$http',
-    function monthlyController($scope, moment, $http) {
+  })
+  .controller('CalendarController', ['$scope', '$rootScope', 'moment', '$http',
+    function CalendarController($scope, $rootScope, moment, $http) {
       $scope.dayNames = ["일", "월", "화", "수", "목", "금", "토"];
       // TODO : 이름 변경하기. (month -> )
       $scope.month = moment();
@@ -17,6 +14,10 @@ angular
       $scope.badgeEngToKor = {
         'start': '시',
         'end': '끝'
+      };
+
+      $scope.openPostingModal = function(posting) {
+        $rootScope.sendPostingToModal(posting)
       };
 
       $scope.$watch('month', function () {
@@ -42,7 +43,7 @@ angular
         : moment($scope.month).add(1, "month");
       };
     }
-  ]);
+  ])
 
 function _buildMonth($scope, start, month, postings){
   $scope.weeks = [];
