@@ -15,9 +15,7 @@ angular
   .controller('CalendarController', ['$scope', '$rootScope', 'moment', '$http',
     function CalendarController($scope, $rootScope, moment, $http) {
       $scope.dayNames = DAY_NAMES;
-      // TODO : 이름 변경하기. (month -> )
-      $scope.month = moment();
-
+      $scope.focusedMonth = moment();
       $scope.badgeEngToKor = BADGE_ENG_TO_KOR;
 
       $scope.checkIsToday = function(date) {
@@ -29,27 +27,27 @@ angular
         $rootScope.sendPostingToModal(posting)
       };
 
-      $scope.$watch('month', function () {
+      $scope.$watch('focusedMonth', function () {
         $http
-        .get('data/postings'+$scope.month.month()+'.json')
+        .get('data/postings'+$scope.focusedMonth.month()+'.json')
         .then(function(response) {
           $scope.postings = response.data;
           $scope.$watch('month', function() {
             ($scope.$$phase || $scope.$root.$$phase) 
-            ? _buildMonth($scope, $scope.start, $scope.month, $scope.postings) 
-            : $scope.$apply(_buildMonth($scope, $scope.start, $scope.month, $scope.postings));
+            ? _buildMonth($scope, $scope.start, $scope.focusedMonth, $scope.postings) 
+            : $scope.$apply(_buildMonth($scope, $scope.start, $scope.focusedMonth, $scope.postings));
           });
         })
       });
 
-      $scope.$watch('month', function getStartDate() {
-        $scope.start = $scope.month.clone().date(1).day(0);
+      $scope.$watch('focusedMonth', function getStartDate() {
+        $scope.start = $scope.focusedMonth.clone().date(1).day(0);
       });
 
       $scope.updateMonth = function (type) {
-        $scope.month = type === "previous" 
-        ? moment($scope.month).subtract(1, "month")
-        : moment($scope.month).add(1, "month");
+        $scope.focusedMonth = type === "previous" 
+        ? moment($scope.focusedMonth).subtract(1, "month")
+        : moment($scope.focusedMonth).add(1, "month");
       };
     }
   ])

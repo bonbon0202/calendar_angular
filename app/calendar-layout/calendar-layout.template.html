@@ -1,7 +1,7 @@
 <section class="container" ng-Controller="CalendarController">
   <div class="monthly-tool">
     <img class="arrow-icon" src="images/arrow-back.png"  ng-click="updateMonth('previous')" />
-    <span class="current-month">{{ month.format("YYYY.MM") }}</span>
+    <span class="current-month">{{ focusedMonth.format("YYYY.MM") }}</span>
     <img class="arrow-icon" src="images/arrow-forward.png"  ng-click="updateMonth('next')" />
   </div>
   <div class="dayname-wrapper">
