@@ -15,7 +15,7 @@
       ng-repeat="day in week.days track by $index"
     >
       <div class="date">{{ day.number }}</div>
-      <div class="content">
+      <div class="content {{ checkIsToday(day.date) }}">
         <div
           class="posting-item"
           ng-repeat="posting in day.postings"

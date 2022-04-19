@@ -1,5 +1,12 @@
 'use strict';
 
+var DAY_NAMES = ["일", "월", "화", "수", "목", "금", "토"];
+
+var BADGE_ENG_TO_KOR = {
+  'start': '시',
+  'end': '끝'
+}
+
 angular
   .module('calendarLayout')
   .component('calendarLayout', {
@@ -7,14 +14,16 @@ angular
   })
   .controller('CalendarController', ['$scope', '$rootScope', 'moment', '$http',
     function CalendarController($scope, $rootScope, moment, $http) {
-      $scope.dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+      $scope.dayNames = DAY_NAMES;
       // TODO : 이름 변경하기. (month -> )
       $scope.month = moment();
 
-      $scope.badgeEngToKor = {
-        'start': '시',
-        'end': '끝'
-      };
+      $scope.badgeEngToKor = BADGE_ENG_TO_KOR;
+
+      $scope.checkIsToday = function(date) {
+        var result = date.format("YYYY.MM.DD") === moment().format("YYYY.MM.DD");
+        return result ? "today-content" : "";
+      }
 
       $scope.openPostingModal = function(posting) {
         $rootScope.sendPostingToModal(posting)
@@ -68,7 +77,7 @@ function _buildWeek(date, month, postings) {
       isCurrentMonth: date.month() === month.month(),
       isToday: date.isSame(new Date(), "day"),
       date: date,
-      postings: getIncludedPostingsAtDay(date, newPostingsArr),
+      postings: _getIncludedPostingsAtDay(date, newPostingsArr),
     });
 
     date = date.clone();
@@ -78,7 +87,7 @@ function _buildWeek(date, month, postings) {
   return days;
 };
 
-function getIncludedPostingsAtDay(date, postings) {
+function _getIncludedPostingsAtDay(date, postings) {
   var newPostings = JSON.parse(JSON.stringify(postings));
 
   var result = newPostings.filter(function(posting) {
