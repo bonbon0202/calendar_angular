@@ -12,7 +12,7 @@
   <div class="week-wrapper" ng-repeat="week in weeks">
     <div 
       class="day-wrapper" 
-      ng-repeat="day in week.days"
+      ng-repeat="day in week.days track by $index"
     >
       <div class="date">{{ day.number }}</div>
       <div class="content">

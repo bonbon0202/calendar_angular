@@ -11,7 +11,7 @@ angular
   .controller('MonthlyController', ['$scope', 'moment', '$http',
     function monthlyController($scope, moment, $http) {
       $scope.dayNames = ["일", "월", "화", "수", "목", "금", "토"];
-      // 이름 변경하기. (month -> )
+      // TODO : 이름 변경하기. (month -> )
       $scope.month = moment();
 
       $scope.badgeEngToKor = {
@@ -19,18 +19,18 @@ angular
         'end': '끝'
       };
 
-      $http
+      $scope.$watch('month', function () {
+        $http
         .get('data/postings'+$scope.month.month()+'.json')
         .then(function(response) {
           $scope.postings = response.data;
-          // console.log($scope.postings);
-
           $scope.$watch('month', function() {
             ($scope.$$phase || $scope.$root.$$phase) 
             ? _buildMonth($scope, $scope.start, $scope.month, $scope.postings) 
             : $scope.$apply(_buildMonth($scope, $scope.start, $scope.month, $scope.postings));
           });
-        });
+        })
+      });
 
       $scope.$watch('month', function getStartDate() {
         $scope.start = $scope.month.clone().date(1).day(0);
@@ -57,7 +57,8 @@ function _buildMonth($scope, start, month, postings){
 };
 
 function _buildWeek(date, month, postings) {
-  var days = [];
+  let days = [];
+  let newPostingsArr = postings.slice();
   
   for (var i = 0; i < 7; i++) {
     days.push({
@@ -66,28 +67,37 @@ function _buildWeek(date, month, postings) {
       isCurrentMonth: date.month() === month.month(),
       isToday: date.isSame(new Date(), "day"),
       date: date,
-      startPostings: getIncludedPostingsAtDay(date, 'start', postings),
-      endPostings: getIncludedPostingsAtDay(date, 'end', postings),
-      postings: getIncludedPostingsAtDay(date, 'start', postings).concat(getIncludedPostingsAtDay(date, 'end', postings)),
+      postings: getIncludedPostingsAtDay(date, newPostingsArr),
     });
 
     date = date.clone();
     date.add(1, "d");
   }
 
-  console.log(days);
   return days;
 };
 
-function getIncludedPostingsAtDay(date, type, postings) {
-  var result = postings.filter(function(posting) {
-    return moment(posting[type === "start" ? "start_time" : "end_time"])
-    .format("yyyyMMDD") === date.format("yyyyMMDD");
+function getIncludedPostingsAtDay(date, postings) {
+  var newPostings = JSON.parse(JSON.stringify(postings));
+
+  var result = newPostings.filter(function(posting) {
+    if(moment(posting.start_time).format("yyyyMMDD") === date.format("yyyyMMDD")) {
+      posting.badge = "start";
+      return posting;
+    }
+
+    if(moment(posting.end_time).format("yyyyMMDD") === date.format("yyyyMMDD")) {
+      posting.badge = "end";
+      return posting;
+    } 
   });
 
-  result.forEach(function(posting) {
-    posting.badge = type;
+  result.sort(function(a, b) {
+    if (a.badge < b.badge) return 1;
+    else if (a.badge > b.badge) return -1;
+    else if (a.name > b.name) return 1;
+    else if (a.name < b.name) return -1;
   });
 
-  return result.sort((a, b) => a.name < b.name ? -1 : a.name < b.name ? 1 : 0);
+  return result;
 };
