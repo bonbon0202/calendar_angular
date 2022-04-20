@@ -39,6 +39,12 @@ https://user-images.githubusercontent.com/61774575/164128768-9fb3e3b7-8b3c-4241-
 - [x] `추가구현` 사용자는 채용공고 마감 시간을 기준으로 마감 시간과 현재와의 시, 분 차이를 알 수 있다.
 - [x] 사용자는 모달의 하단을 통해 html 형태로 채용 공고의 내용을 볼 수 있다.
 
-## :: 빌드 방법
+## 이슈사항
 
-- Run `grunt` for building and `grunt serve` for preview.
+- yeoman을 이용하여 초기 세팅을 진행하여 bower, npm 패키지 매니저가 결합되어 사용되었습니다.
+  초기세팅이 진행된 파일 중 grunt와 밀접하게 연결이 되어 bower를 따로 삭제하지 않고 그대로 진행하였습니다.
+
+## :: 확인 방법
+
+- Run `npm install` for packages installation
+- Run `grunt serve` for preview.
