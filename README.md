@@ -1,12 +1,44 @@
-# calendar2
+# 채용달력 구현
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+## :: 프로젝트 소개
 
-## Build & development
+- 구직자가 달력을 통해 구인 중인 날짜별로 기업목록과 채용 내용을 확인 할 수 있는 `채용달력`입니다.
+- 현재 날짜가 반영되어 기능을 확인 하실 수 있도록 url 데이터에서 날짜를 수정하여 mock데이터를 만들어 사용하였습니다.
+- AngularJS를 이용하여 구현하였습니다.
 
-Run `grunt` for building and `grunt serve` for preview.
+## :: Languages and Tools
 
-## Testing
+- [yo angular generator](https://github.com/yeoman/generator-angular)
+- [angularJS](https://angularjs.org/)
 
-Running `grunt test` will run the unit tests with karma.
+## :: 데모 영상
+
+https://user-images.githubusercontent.com/61774575/155065575-37ba2df4-6c94-4845-8291-306660bbea16.mp4
+
+## :: 구현 기능
+
+### 1. 상단 연/월 네비게이터
+
+- [x] 사용자는 채용 달력의 상단에서 연/월을 확인할 수 있다.
+- [x] 사용자는 채용 달력의 상단의 이전 버튼(ex: <)를 누르면 이전 월로 이동할 수 있다.
+- [x] 사용자는 채용 달력의 상단의 이후 버튼(ex: >)를 누르면 이후 월로 이동할 수 있다.
+- [x] 사용자는 처음 화면에 들어왔을 때 오늘이 포함된 연/월의 채용 달력을 볼 수 있다.
+
+### 2. 채용 달력 구현
+
+- [x] 사용자는 해당 월의 달력을 확인할 수 있다.
+- [x] `추가구현` 사용자는 이전, 이후 월의 날짜, 오늘의 날짜를 해당 날짜 박스의 배경색으로 구분할 수 있다.
+- [x] 사용자는 달력에 월이 다르더라도, 해당 월이 포함된 주는 모두 볼 수 있다.
+- [x] 사용자는 달력에 있는 날짜에서 시작 또는 마감하는 채용 공고를 기업명과 함께 확인할 수 있다.
+- [x] 사용자가 보는 기업명은 '시' -> '끝' 순서, 가나다 순으로 정렬되어있다.
+
+### 3. 기업명 선택 시 모달 구현
+
+- [x] 사용자는 기업명을 선택(클릭)하면 채용 공고에 대한 상세 정보 모달을 볼 수 있다.
+- [x] 사용자는 모달의 상단을 통해 기업 이미지, 기업명, 시작 날짜~마감 날짜, 마감일과 현재와의 일 수 차이를 알 수 있다.
+- [x] `추가구현` 사용자는 채용공고 마감 시간을 기준으로 마감 시간과 현재와의 시, 분 차이를 알 수 있다.
+- [x] 사용자는 모달의 하단을 통해 html 형태로 채용 공고의 내용을 볼 수 있다.
+
+## :: 빌드 방법
+
+- Run `grunt` for building and `grunt serve` for preview.
