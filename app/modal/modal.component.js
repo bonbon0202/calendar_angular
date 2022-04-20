@@ -7,31 +7,29 @@ angular
   })
   .controller('ModalController', ['$scope', 
     function modalController($scope) {
-      $scope.greeting = 'hi modal';
       $scope.isOpenedModal = false;
 
       $scope.closeModal = function() {
         $scope.isOpenedModal = false;
-      }
+      };
 
       $scope.getPeriod = function(start, end) {
         var formText = "yyyy.MM.DD HH:MM";
         return moment(start).format(formText) + ' ~ ' + moment(end).format(formText);
-      }
+      };
 
       $scope.getDiffTime = function() {
         if($scope.posting) {
           return calculateDiffFromToday($scope.posting.end_time);
         }
-      }
+      };
 
       $scope.$on("postingData",function(e, data){
         $scope.isOpenedModal = true;
         $scope.posting = data;
-        console.log('data', data);
       });        
     }
-])
+]);
 
 function calculateDiffFromToday(date) {
   var today = moment();

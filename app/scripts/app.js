@@ -2,14 +2,8 @@
 
 angular
   .module('calendarApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
+    'ngSanitize',,
     'angularMoment',
     'calendarLayout',
     'modal'
