@@ -13,7 +13,7 @@
 
 ## :: 데모 영상
 
-https://user-images.githubusercontent.com/61774575/155065575-37ba2df4-6c94-4845-8291-306660bbea16.mp4
+https://user-images.githubusercontent.com/61774575/164128768-9fb3e3b7-8b3c-4241-8671-5bdff89daf79.mov
 
 ## :: 구현 기능
 
