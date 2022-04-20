@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('modal', ['calendarLayout']);
+angular.module('modal', ['calendar']);

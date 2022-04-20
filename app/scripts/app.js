@@ -5,7 +5,7 @@ angular
     'ngRoute',
     'ngSanitize',,
     'angularMoment',
-    'calendarLayout',
+    'calendar',
     'modal'
   ])
   .config(function ($routeProvider) {

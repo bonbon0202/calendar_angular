@@ -8,9 +8,9 @@ var BADGE_ENG_TO_KOR = {
 }
 
 angular
-  .module('calendarLayout')
-  .component('calendarLayout', {
-    templateUrl: 'calendar-layout/calendar-layout.template.html',
+  .module('calendar')
+  .component('calendar', {
+    templateUrl: 'calendar/calendar.template.html',
   })
   .controller('CalendarController', ['$scope', '$rootScope', 'moment', '$http',
     function CalendarController($scope, $rootScope, moment, $http) {
@@ -70,7 +70,6 @@ function _buildWeek(date, month, postings) {
   
   for (var i = 0; i < 7; i++) {
     days.push({
-      name: date.format("dd").substring(0, 1),
       number: date.date(),
       isCurrentMonth: date.month() === month.month(),
       isToday: date.isSame(new Date(), "day"),
@@ -86,7 +85,7 @@ function _buildWeek(date, month, postings) {
 };
 
 function _getIncludedPostingsAtDay(date, postings) {
-  var newPostings = JSON.parse(JSON.stringify(postings));
+  var newPostings = _.cloneDeep(postings);
 
   var result = newPostings.filter(function(posting) {
     if(moment(posting.start_time).format("yyyyMMDD") === date.format("yyyyMMDD")) {
